@@ -21,13 +21,13 @@
 # include <pthread.h> //? pthread_create, pthread_detach, pthread_join, 
 //? pthread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock
 
-typedef struct s_data {
-	t_philo	*philos;
-}			t_data;
-
 typedef struct s_philo {
 	int	id;
 	int	state;
 }		t_philo;
+
+typedef struct s_data {
+	t_philo	*philos;
+}			t_data;
 
 #endif
