@@ -20,19 +20,6 @@ CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra
 RM		=	rm -rf
 
-
-#!-----------------------------------------------------------------------------#
-#!                                LIBRARIES                                    #
-#!-----------------------------------------------------------------------------#
-
-LDIR	=	../libft/
-LIBFT	=	libft.a
-
-# Generates libft.a
-$(LDIR)/$(LIBFT):
-	$(HIDE)$(MAKE) -C $(LDIR)
-
-
 #!-----------------------------------------------------------------------------#
 #!                                TARGETS                                      #
 #!-----------------------------------------------------------------------------#
@@ -44,10 +31,10 @@ OBJDIR	=	bin/
 SRCS	=	src/philo.c
 OBJS	=	$(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
-all: $(LDIR)/$(LIBFT) $(NAME)
+all: $(NAME)
 
-$(NAME): $(OBJS) $(LDIR)/$(LIBFT)
-	$(HIDE)$(CC) $(CFLAGS) $(OBJS) $(LDIR)$(LIBFT) -o $@
+$(NAME): $(OBJS)
+	$(HIDE)$(CC) $(CFLAGS) $(OBJS) -o $@
 
 $(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c
 	$(HIDE)mkdir -p $(OBJDIR)
@@ -56,12 +43,10 @@ $(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c
 # Removes objects
 clean:
 	$(HIDE)$(RM) $(OBJS)
-	$(HIDE)$(MAKE) -C $(LDIR) $(MAKE) clean
 
 # Removes objects and executables
 fclean: clean
 	$(HIDE)$(RM) $(NAME)
-	$(HIDE)$(MAKE) -C $(LDIR) $(MAKE) fclean
 
 # Removes objects and executables and remakes
 re: fclean all
