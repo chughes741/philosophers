@@ -28,7 +28,7 @@ RM		=	rm -rf
 NAME	=	philo
 SRCDIR	=	src/
 OBJDIR	=	bin/
-SRCS	=	src/philo.c
+SRCS	=	src/philo.c src/data.c
 OBJS	=	$(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 all: $(NAME)

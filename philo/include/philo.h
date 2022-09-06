@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/06 14:50:56 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/06 14:54:47 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,16 @@
 //? pthread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock
 
 typedef struct s_philo {
-	int	id;
+	pthread_t	id;
 	int	state;
 }		t_philo;
 
 typedef struct s_data {
-	t_philo	*philos;
+	t_philo	**philos;
 }			t_data;
+
+// Data functions
+t_data	*get_data(void);
+void	del_data(void);
 
 #endif
