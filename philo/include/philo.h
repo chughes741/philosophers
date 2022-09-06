@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/06 14:54:47 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/06 14:59:37 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_philo {
 }		t_philo;
 
 typedef struct s_data {
-	t_philo	**philos;
+	t_philo	*philos;
 }			t_data;
 
 // Data functions
