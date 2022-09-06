@@ -50,3 +50,13 @@ fclean: clean
 
 # Removes objects and executables and remakes
 re: fclean all
+
+#!-----------------------------------------------------------------------------#
+#!                                 TESTS                                       #
+#!-----------------------------------------------------------------------------#
+
+T_ARGS	= 1 1 1 1
+
+test: $(NAME)
+	$(HIDE)clear
+	$(HIDE)./$^ $(T_ARGS)
