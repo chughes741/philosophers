@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/06 14:59:37 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/06 15:08:45 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,15 @@ typedef struct s_philo {
 
 typedef struct s_data {
 	t_philo	*philos;
+	int		n_philos;
+	int		time_die;
+	int		time_eat;
+	int		time_sleep;
+	int		n_eat;
 }			t_data;
 
 // Data functions
+void	init_data(int argc, char *argv[]);
 t_data	*get_data(void);
 void	del_data(void);
 
