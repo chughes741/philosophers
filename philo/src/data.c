@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:37:14 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/06 15:09:18 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/10 14:14:03 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ void	init_data(int argc, char *argv[])
 	t_data	*data;
 
 	data = get_data();
-	data->n_philos = atoi(argv[1]);
-	data->time_die = atoi(argv[2]);
-	data->time_eat = atoi(argv[3]);
-	data->time_sleep = atoi(argv[4]);
+	data->n_philos = ft_atoi(argv[1]);
+	data->time_die = ft_atoi(argv[2]);
+	data->time_eat = ft_atoi(argv[3]);
+	data->time_sleep = ft_atoi(argv[4]);
 	if (argc == 6)
-		data->n_eat = atoi(argv[5]);
+		data->n_eat = ft_atoi(argv[5]);
+	else
+		data->n_eat = -1;
 	return ;
 }
 
@@ -33,10 +35,7 @@ t_data	*get_data(void)
 	static t_data	*data = NULL;
 
 	if (data == NULL)
-	{
-		data = malloc(1 * sizeof(t_data));
-		memset(data, 0, sizeof(t_data));
-	}
+		data = ft_calloc(1 * sizeof(t_data));
 	return (data);
 }
 
@@ -47,8 +46,6 @@ void	del_data(void)
 
 	data = get_data();
 	if (data)
-	{
 		free(data);
-	}
 	return ;
 }
