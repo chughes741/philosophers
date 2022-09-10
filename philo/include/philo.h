@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/06 15:08:45 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/10 13:57:19 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 typedef struct s_philo {
 	pthread_t	id;
-	int	state;
+	int			state;
 }		t_philo;
 
 typedef struct s_data {
@@ -39,5 +39,8 @@ typedef struct s_data {
 void	init_data(int argc, char *argv[]);
 t_data	*get_data(void);
 void	del_data(void);
+
+// Error handling
+void	exit_error(char *message);
 
 #endif

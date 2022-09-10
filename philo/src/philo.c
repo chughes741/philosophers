@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/06 15:15:22 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/10 13:54:25 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(int argc, char *argv[])
 {
 	t_data  *data;
 
+    if (argc != 5 || argc != 6)
+        exit(1);
     data = get_data();
     init_data(argc, argv);
     data->philos = malloc(sizeof(t_philo *));
