@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 13:57:19 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/10 14:07:32 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ void	del_data(void);
 
 // Error handling
 void	exit_error(char *message);
+
+// LibC functions
+int	ft_atoi(const char *str);
 
 #endif
