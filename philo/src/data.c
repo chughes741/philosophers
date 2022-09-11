@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:37:14 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 10:27:56 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 12:30:30 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	init_data(int argc, char *argv[])
 		data->n_eat = ft_atoi(argv[5]);
 	else
 		data->n_eat = -1;
-	data->philos = ft_calloc(data->n_philos + 1, sizeof(t_philo));
+	data->philos = ft_calloc(data->n_philos + 1, sizeof(t_philo *));
 	init_forks();
 	return ;
 }
