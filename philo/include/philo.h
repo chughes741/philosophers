@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 21:28:47 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/10 21:32:55 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,9 @@ void	*ft_calloc(size_t nitems, size_t size);
 
 // pthread functions
 void	init_philos(void);
+
+// mutex functions
+void	init_forks(void);
+void	destroy_forks(void);
 
 #endif
