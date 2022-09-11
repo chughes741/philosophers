@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:01:12 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 13:53:13 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 13:57:38 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ int	ft_atoi(const char *str)
 		negative = -1;
 	while (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-		rtn = (rtn * 10) + (str[i++] - '0');
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		rtn = (rtn * 10) + (str[i] - '0');
+		i++;
+	}
 	return (rtn * negative);
 }
