@@ -30,7 +30,7 @@ SRCDIR	=	src/
 OBJDIR	=	bin/
 SRCS	=	src/data.c		src/eat.c		src/error.c			src/forks.c	\
 			src/ft_atoi.c	src/ft_calloc.c	src/init_philos.c	src/philo.c \
-			src/sleep.c		src/think.c
+			src/sleep.c		src/think.c		src/time.c
 OBJS	=	$(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 all: $(NAME)
