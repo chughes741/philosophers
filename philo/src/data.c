@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:37:14 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 21:29:26 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 10:27:56 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	init_data(int argc, char *argv[])
 	else
 		data->n_eat = -1;
 	data->philos = ft_calloc(data->n_philos + 1, sizeof(t_philo));
-	data->forks = ft_calloc(data->n_philos + 1, sizeof(pthread_mutex_t));
+	init_forks();
 	return ;
 }
 
@@ -47,7 +47,7 @@ void	del_data(void)
 	t_data	*data;
 
 	data = get_data();
-	pthread_mutex_destroy(data->forks);
+	destroy_forks();
 	if (data)
 		free(data);
 	return ;
