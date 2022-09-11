@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 13:55:03 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 14:08:31 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,16 @@ void	init_philos(void)
 
 	data = get_data();
 	i = 0;
+	printf("n_philos: %i\n", data->n_philos);
 	while (++i <= data->n_philos)
 	{
-		if (pthread_create(&data->philos[i]->id, NULL, &live, NULL))
+		if (pthread_create(&data->philos[i].id, NULL, &live, NULL))
 			exit_error("Error creating threads");
 	}
 	i = 0;
 	while (++i <= data->n_philos)
 	{
-		if (pthread_join(data->philos[i]->id, NULL) != 0)
+		if (pthread_join(data->philos[i].id, NULL) != 0)
 			exit_error("Error reabsorbing my spawn");
 	}
 	return ;

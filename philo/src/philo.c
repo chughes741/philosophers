@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 12:31:32 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 14:03:36 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int	main(int argc, char *argv[])
     init_data(argc, argv);
     init_philos();
     del_data();
+    printf("Current time in ms: %li\n", get_time());
     exit(0);
 }

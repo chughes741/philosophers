@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 12:48:31 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 14:05:38 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ typedef struct s_philo {
 }		t_philo;
 
 typedef struct s_data {
-	t_philo			**philos;
-	pthread_mutex_t	**forks;
+	t_philo			*philos;
+	pthread_mutex_t	*forks;
 	int				n_philos;
 	int				time_die;
 	int				time_eat;
