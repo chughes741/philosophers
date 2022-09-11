@@ -6,18 +6,24 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 20:29:45 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 13:52:16 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+// Thread runtime for philos
 void	*live(void *ptr)
 {
-	(void)ptr;
+	if (ptr) return; //! RBS
+	while (0==0) //TODO lifetime loop
+	{
+		return (NULL);
+	}
 	return (NULL);
 }
 
+// Creates and destroys threads
 void	init_philos(void)
 {
 	t_data	*data;

@@ -6,12 +6,13 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 21:31:38 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 10:29:34 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 13:53:02 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+// Initializes fork mutexs
 void	init_forks(void)
 {
 	t_data	*data;
@@ -28,6 +29,7 @@ void	init_forks(void)
 	return ;
 }
 
+// Destroys fork mutexs
 void	destroy_forks(void)
 {
 	t_data	*data;

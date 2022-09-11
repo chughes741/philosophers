@@ -6,12 +6,13 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:01:12 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 14:06:36 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 13:53:13 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+// Returns str as an int
 int	ft_atoi(const char *str)
 {
 	int	i;
