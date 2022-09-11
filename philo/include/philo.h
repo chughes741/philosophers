@@ -6,20 +6,21 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 14:13:25 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/10 20:10:32 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-# include <string.h> //? memset
-# include <stdio.h> //? printf
-# include <stdlib.h> //? malloc, free
-# include <unistd.h> //? usleep
-# include <sys/time.h> //? gettimeofday
-# include <pthread.h> //? pthread_create, pthread_detach, pthread_join, 
-//? pthread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock
+# include <string.h>	//? memset
+# include <stdio.h>		//? printf
+# include <stdlib.h>	//? malloc, free
+# include <unistd.h>	//? usleep
+# include <sys/time.h>	//? gettimeofday
+# include <pthread.h>	//? pthread_create, pthread_detach, pthread_join, 
+						//? pthread_mutex_init, pthread_mutex_destroy,
+						//? pthread_mutex_lock, pthread_mutex_unlock
 
 typedef struct s_philo {
 	pthread_t	id;
@@ -27,7 +28,7 @@ typedef struct s_philo {
 }		t_philo;
 
 typedef struct s_data {
-	t_philo	*philos;
+	t_philo	**philos;
 	int		n_philos;
 	int		time_die;
 	int		time_eat;
@@ -46,5 +47,8 @@ void	exit_error(char *message);
 // LibC functions
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nitems, size_t size);
+
+// pthread functions
+void	init_philos(void);
 
 #endif
