@@ -49,6 +49,8 @@ clean:
 # Removes objects and executables
 fclean: clean
 	$(HIDE)$(RM) $(NAME)
+	$(HIDE)$(RM) test_philo*
+	#! RBS
 
 # Removes objects and executables and remakes
 re: fclean all
