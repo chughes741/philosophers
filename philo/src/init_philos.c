@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 13:52:16 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 13:55:03 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 // Thread runtime for philos
 void	*live(void *ptr)
 {
-	if (ptr) return; //! RBS
-	while (0==0) //TODO lifetime loop
+	while (ptr) //TODO lifetime loop
 	{
 		return (NULL);
 	}
