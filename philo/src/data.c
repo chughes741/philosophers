@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:37:14 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 20:11:07 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/10 20:22:03 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_data	*get_data(void)
 	static t_data	*data = NULL;
 
 	if (data == NULL)
-		data = ft_calloc(1 * sizeof(t_data));
+		data = ft_calloc(1, sizeof(t_data));
 	return (data);
 }
 
