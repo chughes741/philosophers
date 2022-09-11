@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 15:31:19 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 15:46:06 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	*live(void *ptr)
 		philo_eat(philo_id);
 		philo_sleep(philo_id);
 		philo_think(philo_id);
+		data->philos[philo_id].alive = false;
 	}
 	return (NULL);
 }
@@ -38,6 +39,7 @@ void	init_philos(void)
 
 	data = get_data();
 	i = 0;
+	data->start_time = get_time();
 	while (++i <= data->n_philos)
 	{
 		if (pthread_create(&data->philos[i].id, NULL, &live, &i))
