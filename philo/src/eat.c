@@ -6,13 +6,14 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:19:04 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 14:19:55 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 15:29:43 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-void	philo_eat(void)
+void	philo_eat(int id)
 {
+	(void)id;
 	return ;
 }

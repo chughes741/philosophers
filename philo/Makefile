@@ -50,7 +50,7 @@ clean:
 fclean: clean
 	$(HIDE)$(RM) $(NAME)
 	$(HIDE)$(RM) test_philo*
-	#! RBS
+#! RBS
 
 # Removes objects and executables and remakes
 re: fclean all

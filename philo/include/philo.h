@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 14:05:38 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 15:30:38 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@
 # include <pthread.h>	//? pthread_create, pthread_detach, pthread_join, 
 						//? pthread_mutex_init, pthread_mutex_destroy,
 						//? pthread_mutex_lock, pthread_mutex_unlock
+# include <stdbool.h>
 
 typedef struct s_philo {
 	pthread_t	id;
-	int			state;
+	bool		alive;
 }		t_philo;
 
 typedef struct s_data {
@@ -51,6 +52,11 @@ void	init_philos(void);
 // mutex functions
 void	init_forks(void);
 void	destroy_forks(void);
+
+// Action functions
+void	philo_eat(int id);
+void	philo_sleep(int id);
+void	philo_think(int id);
 
 // LibC and utility functions
 int		ft_atoi(const char *str);

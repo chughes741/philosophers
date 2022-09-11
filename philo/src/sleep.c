@@ -6,13 +6,14 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:19:30 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/10 14:19:51 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/11 15:30:50 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-void	philo_sleep(void)
+void	philo_sleep(int id)
 {
+	(void)id;
 	return ;
 }
