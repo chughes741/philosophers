@@ -30,7 +30,7 @@ SRCDIR	=	src/
 OBJDIR	=	bin/
 SRCS	=	src/data.c		src/eat.c		src/error.c			src/forks.c	\
 			src/ft_atoi.c	src/ft_calloc.c	src/init_philos.c	src/philo.c \
-			src/sleep.c		src/think.c		src/time.c
+			src/sleep.c		src/think.c		src/time.c			src/print_action.c
 OBJS	=	$(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 all: $(NAME)
@@ -59,8 +59,8 @@ re: fclean all
 #!                                 TESTS                                       #
 #!-----------------------------------------------------------------------------#
 
-T_ARGS	= 2 100 10 100
+T_ARGS	= 4 100 10 100
 
-test: $(NAME)
+test: all
 	$(HIDE)clear
-	$(HIDE)./$^ $(T_ARGS)
+	$(HIDE)./$(NAME) $(T_ARGS)

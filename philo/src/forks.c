@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 21:31:38 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 11:51:26 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 12:28:47 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init_forks(void)
 
 	data = get_data();
 	data->forks = ft_calloc(data->n_philos + 1, sizeof(pthread_mutex_t));
-	if (pthread_mutex_init(&data->change_state, NULL))
+	if (pthread_mutex_init(&data->action, NULL))
 		exit_error("Error initializing mutex");
 	i = -1;
 	while (++i < data->n_philos)
@@ -38,7 +38,7 @@ void	destroy_forks(void)
 	int		i;
 
 	data = get_data();
-	pthread_mutex_destroy(&data->change_state);
+	pthread_mutex_destroy(&data->action);
 	i = -1;
 	while (++i < data->n_philos)
 		pthread_mutex_destroy(&data->forks[i]);

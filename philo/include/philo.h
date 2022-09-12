@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 11:48:39 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 12:24:24 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@
 						//? pthread_mutex_lock, pthread_mutex_unlock
 # include <stdbool.h>
 
+# define P_EAT		1
+# define P_THINK	2
+# define P_SLEEP	3
+
 typedef struct s_philo {
 	pthread_t	id;
 	bool		alive;
@@ -31,7 +35,7 @@ typedef struct s_philo {
 typedef struct s_data {
 	t_philo			*philos;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	change_state;
+	pthread_mutex_t	action;
 	time_t			start_time;
 	int				n_philos;
 	int				time_die;
@@ -56,6 +60,7 @@ void	init_forks(void);
 void	destroy_forks(void);
 
 // Action functions
+void	print_action(int action, time_t time, int id);
 void	philo_eat(int id);
 void	philo_sleep(int id);
 void	philo_think(int id);

@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 15:46:06 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 12:14:27 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	*live(void *ptr)
 	philo_id = *(int *)ptr;
 	data = get_data();
 	data->philos[philo_id].alive = true;
+	
 	while (data->philos[philo_id].alive)
 	{
 		philo_eat(philo_id);
