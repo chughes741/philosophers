@@ -6,20 +6,29 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 12:37:52 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/11 12:48:10 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 16:01:55 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+void	start_time(void)
+{
+	t_data	*data;
+
+	data = get_data();
+	gettimeofday(&data->time, NULL);
+	return ;
+}
+
 // Returns current time since Epoch in ms
 time_t	get_time(void)
 {
+	t_data			*data;
 	struct timeval	t_now;
-	time_t			t_ms;
 
-	if (gettimeofday(&t_now, NULL) == -1)
-		exit_error("Error getting time of day");
-	t_ms = (t_now.tv_sec / 1000) + (t_now.tv_sec * 1000);
-	return (t_ms);
+	data = get_data();
+	gettimeofday(&t_now, NULL);
+	return (((t_now.tv_sec - data->time.tv_sec) * 1000)
+		+ ((t_now.tv_usec - data->time.tv_usec) / 1000));
 }

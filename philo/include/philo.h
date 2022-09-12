@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 15:42:09 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 15:58:01 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_data {
 	t_philo			*philos;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	action;
-	time_t			start_time;
+	struct timeval	time;
 	int				n_philos;
 	int				time_die;
 	int				time_eat;
@@ -72,5 +72,6 @@ void	philo_think(int id);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nitems, size_t size);
 time_t	get_time(void);
+void	start_time(void);
 
 #endif

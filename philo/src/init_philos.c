@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 12:42:10 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 15:58:26 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void	init_philos(void)
 	data = get_data();
 	i = 0;
 	pthread_mutex_lock(&data->action);
+	start_time();
 	while (++i <= data->n_philos)
 	{
 		if (pthread_create(&data->philos[i].id, NULL, &live, &i))
 			exit_error("Error creating threads");
 		usleep(100);
 	}
-	data->start_time = get_time();
 	pthread_mutex_unlock(&data->action);
 	i = 0;
 	while (++i <= data->n_philos)
