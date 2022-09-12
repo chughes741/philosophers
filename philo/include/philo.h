@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 12:24:24 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 12:30:52 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	init_forks(void);
 void	destroy_forks(void);
 
 // Action functions
-void	print_action(int action, time_t time, int id);
+void	print_action(int action, int id);
 void	philo_eat(int id);
 void	philo_sleep(int id);
 void	philo_think(int id);

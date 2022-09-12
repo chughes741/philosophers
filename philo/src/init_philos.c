@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 12:14:27 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 12:42:10 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ void	*live(void *ptr)
 	philo_id = *(int *)ptr;
 	data = get_data();
 	data->philos[philo_id].alive = true;
-	
+	pthread_mutex_lock(&data->action);
+	pthread_mutex_unlock(&data->action);
+	if (philo_id % 2 == 0)
+		usleep(100);
 	while (data->philos[philo_id].alive)
 	{
 		philo_eat(philo_id);
 		philo_sleep(philo_id);
 		philo_think(philo_id);
-		data->philos[philo_id].alive = false;
 	}
 	return (NULL);
 }
@@ -40,12 +42,15 @@ void	init_philos(void)
 
 	data = get_data();
 	i = 0;
-	data->start_time = get_time();
+	pthread_mutex_lock(&data->action);
 	while (++i <= data->n_philos)
 	{
 		if (pthread_create(&data->philos[i].id, NULL, &live, &i))
 			exit_error("Error creating threads");
+		usleep(100);
 	}
+	data->start_time = get_time();
+	pthread_mutex_unlock(&data->action);
 	i = 0;
 	while (++i <= data->n_philos)
 	{
