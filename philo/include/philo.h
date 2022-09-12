@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 15:58:01 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 16:08:39 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 typedef struct s_philo {
 	pthread_t	id;
 	bool		alive;
+	time_t		last_ate;
 	int			n_eaten;
 }		t_philo;
 
@@ -63,7 +64,7 @@ void	init_forks(void);
 void	destroy_forks(void);
 
 // Action functions
-void	print_action(int action, int id);
+void	*print_action(int action, int id);
 void	philo_eat(int id);
 void	philo_sleep(int id);
 void	philo_think(int id);

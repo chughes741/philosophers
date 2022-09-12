@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 15:58:26 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 16:09:19 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	*live(void *ptr)
 	data->philos[philo_id].alive = true;
 	pthread_mutex_lock(&data->action);
 	pthread_mutex_unlock(&data->action);
+	data->philos[philo_id].last_ate = get_time();
 	if (philo_id % 2 == 0)
 		usleep(100);
 	while (data->philos[philo_id].alive)
@@ -30,6 +31,8 @@ void	*live(void *ptr)
 		philo_eat(philo_id);
 		philo_sleep(philo_id);
 		philo_think(philo_id);
+		if (data->philos[philo_id].n_eaten == data->n_eat)
+			return (print_action(P_DONE, philo_id));
 	}
 	return (NULL);
 }
