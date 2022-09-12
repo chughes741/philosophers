@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 16:18:47 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 19:42:07 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	exit_error(char *message);
 // pthread and mutex functions
 void	init_philos(void);
 void	init_forks(void);
+void	destroy_philos(void);
 void	destroy_forks(void);
 
 // Action functions
