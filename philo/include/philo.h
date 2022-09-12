@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 16:08:39 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 16:18:47 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,8 @@ void	del_data(void);
 // Error handling
 void	exit_error(char *message);
 
-// pthread functions
+// pthread and mutex functions
 void	init_philos(void);
-
-// mutex functions
 void	init_forks(void);
 void	destroy_forks(void);
 
@@ -74,5 +72,7 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nitems, size_t size);
 time_t	get_time(void);
 void	start_time(void);
+void	monitor(void);
+void	check_death(void);
 
 #endif

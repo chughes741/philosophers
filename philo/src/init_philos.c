@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 16:09:19 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 16:17:05 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	init_philos(void)
 		usleep(100);
 	}
 	pthread_mutex_unlock(&data->action);
+	monitor();
 	i = 0;
 	while (++i <= data->n_philos)
 	{
