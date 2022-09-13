@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:19:04 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/13 12:53:20 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 13:02:02 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ void	philo_eat(int id)
 	usleep(1000 * data->time_eat);
 	data->philos[id].n_eaten += 1;
 	if (data->philos[id].n_eaten == data->n_eat)
-	{
 		print_action(P_DONE, id);
-		data->run = false;
-	}
 	if (id == data->n_philos)
 		pthread_mutex_unlock(&data->forks[1]);
 	else
