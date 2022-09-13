@@ -51,7 +51,6 @@ clean:
 fclean: clean
 	$(HIDE)$(RM) $(NAME)
 	$(HIDE)$(RM) test_philo*
-#! RBS
 
 # Removes objects and executables and remakes
 re: fclean all
@@ -60,7 +59,7 @@ re: fclean all
 #!                                 TESTS                                       #
 #!-----------------------------------------------------------------------------#
 # 	n_philos  t_die  t_eat  t_sleep  [n_eats]
-T_ARGS	= 4 100 200 1000 10
+T_ARGS	= 4 4000 1000 500
 
 test: all
 	$(HIDE)clear

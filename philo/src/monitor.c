@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:13:30 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 20:49:30 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 11:48:35 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ void	check_death(void)
 			data->run = false;
 		}
 	}
-	return ;	
+	return ;
 }
