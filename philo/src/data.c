@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:37:14 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 20:37:11 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 13:23:55 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	del_data(void)
 
 	data = get_data();
 	destroy_forks();
+	free(data->philos);
 	if (data)
 		free(data);
 	return ;
