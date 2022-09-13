@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 12:19:06 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/13 12:52:59 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 16:15:56 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ void	*print_action(int action, int id)
 		printf("%li %i is thinking\n", get_time(), id);
 	else if (action == P_SLEEP)
 		printf("%li %i is sleeping\n", get_time(), id);
-	else if (action == P_DONE)
-		printf("%li %i has finished eating\n", get_time(), id);
 	else if (action == P_DEAD)
-		printf("%li %i has died\n", get_time(), id);
+		printf("%li %i died\n", get_time(), id);
 	pthread_mutex_unlock(&data->action);
 	return (NULL);
 }
