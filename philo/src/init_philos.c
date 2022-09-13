@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 20:50:01 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 20:53:43 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	*live(void *ptr)
 	while (data->run == true)
 	{
 		philo_eat(philo_id);
+		if (data->run == false)
+			break ;
 		philo_sleep(philo_id);
 		philo_think(philo_id);
 	}
