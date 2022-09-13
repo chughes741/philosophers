@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 20:45:22 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 12:52:07 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 						//? pthread_mutex_lock, pthread_mutex_unlock
 # include <stdbool.h>
 
+# define P_FORK		0
 # define P_EAT		1
 # define P_THINK	2
 # define P_SLEEP	3
