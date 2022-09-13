@@ -6,20 +6,25 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:13:30 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 19:34:45 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 20:44:21 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-void	monitor(void)
+void	monitor_philos(void)
 {
-	while (0 == 0)
+	t_data	*data;
+
+	data = get_data();
+	data->run = true;
+	while (data->run == true)
 	{
 		printf("Monitoring\n");
 		check_death();
 		usleep(10);
 	}
+	return ;
 }
 
 void	check_death(void)
@@ -36,8 +41,7 @@ void	check_death(void)
 		if ((curr_time - data->philos[i].last_ate) >= data->time_die)
 		{
 			print_action(P_DEAD, i);
-			data->philos[i].alive = false;
-			exit_error("");
+			data->run = false;
 		}
 	}
 	return ;	

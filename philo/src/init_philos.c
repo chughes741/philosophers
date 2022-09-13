@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:06:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 19:41:21 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 20:43:02 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,12 @@ void	*live(void *ptr)
 
 	philo_id = *(int *)ptr;
 	data = get_data();
-	data->philos[philo_id].alive = true;
 	pthread_mutex_lock(&data->action);
 	pthread_mutex_unlock(&data->action);
 	data->philos[philo_id].last_ate = get_time();
 	if (philo_id % 2 == 0)
 		usleep(100);
-	while (data->philos[philo_id].alive)
+	while (data->run == true)
 	{
 		philo_eat(philo_id);
 		philo_sleep(philo_id);
@@ -46,13 +45,13 @@ void	init_philos(void)
 	data = get_data();
 	i = 0;
 	pthread_mutex_lock(&data->action);
-	start_time();
 	while (++i <= data->n_philos)
 	{
 		if (pthread_create(&data->philos[i].id, NULL, &live, &i))
 			exit_error("Error creating threads");
 		usleep(100);
 	}
+	start_time();
 	pthread_mutex_unlock(&data->action);
 	return ;
 }
@@ -65,9 +64,6 @@ void	destroy_philos(void)
 	data = get_data();
 	i = 0;
 	while (++i <= data->n_philos)
-	{
-		if (pthread_join(data->philos[i].id, NULL) != 0)
-			exit_error("Error reabsorbing my spawn");
-	}
+		pthread_join(data->philos[i].id, NULL);
 	return ;
 }
