@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/13 12:52:07 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 13:36:19 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	*print_action(int action, int id);
 void	philo_eat(int id);
 void	philo_sleep(int id);
 void	philo_think(int id);
+void	smart_sleep(time_t slp);
 
 // LibC and utility functions
 int		ft_atoi(const char *str);
