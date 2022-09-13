@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:19:04 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/13 13:37:18 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 16:13:37 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ void	philo_eat(int id)
 	else
 		pthread_mutex_unlock(&data->forks[id + 1]);
 	pthread_mutex_unlock(&data->forks[id]);
-	if (data->philos[id].n_eaten == data->n_eat)
-		print_action(P_DONE, id);
 	return ;
 }

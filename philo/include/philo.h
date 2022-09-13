@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:50:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/13 13:36:19 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 16:13:45 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@
 # define P_EAT		1
 # define P_THINK	2
 # define P_SLEEP	3
-# define P_DONE		4
-# define P_DEAD		5
+# define P_DEAD		4
 
 typedef struct s_philo {
 	pthread_t	id;
