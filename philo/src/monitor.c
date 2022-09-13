@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:13:30 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/13 11:48:35 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/13 13:15:59 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,20 @@ void	check_death(void)
 	i = 0;
 	while (++i <= data->n_philos)
 	{
-		if ((curr_time - data->philos[i].last_ate) >= data->time_die)
+		if (((curr_time - data->philos[i].last_ate) >= data->time_die)
+			&& (data->philos[i].n_eaten != data->n_eat))
 		{
 			print_action(P_DEAD, i);
 			data->run = false;
 		}
+	}
+	i = 0;
+	while (++i <= data->n_philos)
+	{
+		if (data->philos[i].n_eaten != data->n_eat)
+			break ;
+		else if (data->philos[i].n_eaten == data->n_eat && i == data->n_philos)
+			data->run = false;
 	}
 	return ;
 }

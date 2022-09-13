@@ -59,7 +59,7 @@ re: fclean all
 #!                                 TESTS                                       #
 #!-----------------------------------------------------------------------------#
 # 	n_philos  t_die  t_eat  t_sleep  [n_eats]
-T_ARGS	= 10 400 200 100
+T_ARGS	= 4 800 200 100 1
 
 test: all
 	$(HIDE)clear
