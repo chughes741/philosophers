@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:13:30 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 20:44:21 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/12 20:49:30 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	monitor_philos(void)
 	data->run = true;
 	while (data->run == true)
 	{
-		printf("Monitoring\n");
 		check_death();
 		usleep(10);
 	}
