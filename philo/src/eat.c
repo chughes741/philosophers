@@ -6,12 +6,13 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:19:04 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/13 16:19:51 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/14 12:54:32 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+// Takes forks and eats with them
 void	philo_eat(int id)
 {
 	t_data	*data;

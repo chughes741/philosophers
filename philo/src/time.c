@@ -6,12 +6,13 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 12:37:52 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/12 16:01:55 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/14 12:56:48 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+// Sets start time of simulation
 void	start_time(void)
 {
 	t_data	*data;

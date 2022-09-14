@@ -6,12 +6,13 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:13:30 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/13 13:15:59 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/14 12:55:59 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+// Monitors run state of philos
 void	monitor_philos(void)
 {
 	t_data	*data;
@@ -26,6 +27,7 @@ void	monitor_philos(void)
 	return ;
 }
 
+// Checks if any philos have died
 void	check_death(void)
 {
 	t_data	*data;
