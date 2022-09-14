@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:19:30 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/14 12:56:32 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/14 12:58:43 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	philo_sleep(int id)
 	t_data	*data;
 
 	data = get_data();
-	smart_sleep(data->time_sleep);	
+	smart_sleep(data->time_sleep);
 	print_action(P_SLEEP, id);
 	return ;
 }
