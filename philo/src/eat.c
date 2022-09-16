@@ -6,7 +6,7 @@
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:19:04 by chughes           #+#    #+#             */
-/*   Updated: 2022/09/14 17:33:48 by chughes          ###   ########.fr       */
+/*   Updated: 2022/09/16 15:17:06 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	philo_eat(int id)
 	else
 		pthread_mutex_lock(&data->forks[id + 1]);
 	print_action(P_FORK, id);
+	while (data->n_philos == 1 && data->run)
+		usleep(100);
 	pthread_mutex_lock(&data->forks[id]);
 	print_action(P_FORK, id);
 	data->philos[id].last_ate = get_time();
