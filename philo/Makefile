@@ -8,7 +8,7 @@ DEFAULT_GOAL: all
 .PHONY: all bonus clean fclean re
 
 # Hide calls
-export VERBOSE	=	FALSE
+export VERBOSE	=	TRUE
 ifeq ($(VERBOSE),TRUE)
 	HIDE =
 else
@@ -50,7 +50,6 @@ clean:
 # Removes objects and executables
 fclean: clean
 	$(HIDE)$(RM) $(NAME)
-	$(HIDE)$(RM) test_philo*
 
 # Removes objects and executables and remakes
 re: fclean all
